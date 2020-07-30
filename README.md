@@ -7,13 +7,13 @@ A ready to go bootstrap based website to speed up spinning a new django project.
 
 The django project is called web and has the following structure
 
-── web
-    ├── static
-    │   ├── bootstrap
-    │   ├── css
-    │   └── js
-    ├── templates
-    └── web
+    ── web
+        ├── static
+        │   ├── bootstrap
+        │   ├── css
+        │   └── js
+        ├── templates
+        └── web
 
 
 ### Base CSS , JS and HTML
