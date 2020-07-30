@@ -1,0 +1,20 @@
+#!wing
+#!version=7.0
+##################################################################
+# Wing project file                                              #
+##################################################################
+[project attributes]
+proj.directory-list = [{'dirloc': loc('web'),
+                        'excludes': (),
+                        'filter': u'*',
+                        'include_hidden': False,
+                        'recursive': True,
+                        'watch_for_changes': True}]
+proj.file-list = [loc('README.md'),
+                  loc('setup.sh'),
+                  loc('sourceme.sh')]
+proj.file-type = 'shared'
+proj.launch-config = {loc('web/manage.py'): ('project',
+        (u'runserver --noreload',
+         ''))}
+proj.main-file = loc('web/manage.py')
