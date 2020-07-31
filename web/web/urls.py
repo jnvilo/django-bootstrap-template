@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url,include
+from django.views.generic import TemplateView
 
 from .views import BaseView 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bootstrap/', include("bootstrap.urls")),
-    path("", BaseView.as_view()),
+    path('', TemplateView.as_view(template_name="bootstrap/index.html")),
     
 ]
