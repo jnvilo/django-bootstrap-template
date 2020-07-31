@@ -1,4 +1,9 @@
 BOOTSTRAP_VER = 4.3.1
+REGISTRY_URL=hub.lnxsystems.com
+PROJECT=library
+IMAGE_NAME=django-bootstrap-template
+TAG=0.1.1
+
 
 .PHONY: web
 web: bootstrap venv migrate
@@ -29,6 +34,7 @@ update_gitignore:
 venv:
 	virtualenv venv
 	source venv/bin/activate && pip install -r web/requirements.txt
+	venv/bin/python web/manage.py migrate 
 	sh scripts/create_temp_admin.sh
 .PHONY:
 run:
@@ -42,4 +48,16 @@ makemigrations:
 	venv/bin/python web/manage.py migrations
 
 
+docker: web 
+	docker build -t ${REGISTRY_URL}/${PROJECT}/${IMAGE_NAME}:${TAG} .
+
+pull:   
+	docker  pull ${REGISTRY_URL}/${PROJECT}/${IMAGE_NAME}:latest 
+
+tag: 
+	docker tag ${REGISTRY_URL}/${PROJECT}/${IMAGE_NAME}:${TAG} ${REGISTRY_URL}/${PROJECT}/${IMAGE_NAME}:latest
+ 
+push:  docker tag
+	docker push ${REGISTRY_URL}/${PROJECT}/${IMAGE_NAME}:latest
+	docker push ${REGISTRY_URL}/${PROJECT}/${IMAGE_NAME}:${TAG}
 
