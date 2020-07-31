@@ -15,7 +15,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import sys
-
+from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -49,6 +49,17 @@ print(f"TEMPLATES: {TEMPLATES}")
 print(f"STATIC_DIR: {STATIC_DIR}")
 print(f"ALLOWED_HOSTS: {ALLOWED_HOSTS}")
 print("*"*80)
+
+
+static_root_path = Path(STATIC_ROOT)
+
+if not static_root_path.exists():
+    static_root_path.mkdir()
+elif not static_root_path.is_dir():
+    print(f"STATIC_ROOT: {STATIC_ROOT} exists as a file. Please delete or point STATIC_ROOT elsewhere")
+    sys.exit(1)
+
+
 
 # Application definition
 
