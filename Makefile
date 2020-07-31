@@ -29,10 +29,10 @@ update_gitignore:
 venv:
 	virtualenv venv
 	source venv/bin/activate && pip install -r web/requirements.txt
-
+	sh scripts/create_temp_admin.sh
 .PHONY:
 run:
-	venv/bin/python web/manage.py runserver 0.0.0.0:8000
+	DEBUG=True venv/bin/python web/manage.py runserver 0.0.0.0:8000
 
 .PHONY:
 migrate:
