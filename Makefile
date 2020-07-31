@@ -1,7 +1,7 @@
 BOOTSTRAP_VER = 4.3.1
 
 .PHONY: web
-web: bootstrap venv
+web: bootstrap venv web/requirements.txt
 
 .PHONY: setup
 setup: venv web/requirements.txt bootstrap
@@ -19,7 +19,7 @@ clean_bootstrap:
 bootstrap: web/bootstrap/static/bootstrap 
 
 web/bootstrap/static/bootstrap:
-	sh ./scripts/make_bootstrap.sh 
+	sh ./scripts/manage_bootstrap.sh 
 	touch web/bootstrap/static/bootstrap
 
 .PHONY: update_gitignore
@@ -32,3 +32,6 @@ venv:
 web/requirements.txt: venv web/requirements.in
 	source venv/bin/activate && pip install -r web/requirements.in
 
+.PHONY:
+run:
+	venv/bin/python web/manage.py runserver 0.0.0.0:8000
