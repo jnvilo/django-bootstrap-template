@@ -1,0 +1,111 @@
+{% extends "bootstrap/base.html"%}
+
+{%block TITLE %}Index.html{% endblock %}
+
+
+{%block HEAD_BOTTOM %}
+
+<style>
+
+.page-nav { 
+  display: flex;
+}
+
+.page-nav h1 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  margin-top:5px;
+}
+.nav-collapse { 
+  display: none !important;
+}
+
+.nav-wide {
+  dislpay: flex;
+}
+@media screen and (max-width:900px), screen and (max-height:500px) {
+    .nav-wide { display: none !important; }
+    .nav-collapse { display: flex;}
+    
+}
+
+
+/*
+ * Footer
+ */
+.footer {
+  padding: 2.5rem 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: .05rem solid #e5e5e5;
+}
+.footer p:last-child {
+  margin-bottom: 0;
+}
+
+</style>
+    
+{%endblock HEAD_BOTTOM %}
+
+{% block PAGE_NAV %}
+
+  <div class="page-nav bg-white shadow-sm">
+	
+    <nav class="page-nav nav-wide container">
+      {% comment %} For full width, remove the container class. {%endcomment%}
+    
+      <!-- a class="nav-link active" href="#">Dashboard</a>
+      <a class="nav-link" href="#">
+        Friends
+        <span class="badge badge-pill bg-light align-text-bottom">27</span>
+      </a>
+      <a class="nav-link" href="#">Explore</a>
+      <a class="nav-link" href="#">Suggestions</a>
+      <a class="nav-link" href="#">Link</a>
+      <a class="nav-link" href="#">Link</a>
+      <a class="nav-link" href="#">Link</a>
+      <a class="nav-link" href="#">Link</a>
+      <a class="nav-link" href="#">Link</a -->
+      <h1>Welcome</h1>
+    </nav>
+ 
+    <nav class="nav nav-underline nav-collapse">
+    
+    </nav>
+ </div>
+{%endblock PAGE_NAV %}
+  
+{%block PAGE_CONTENT %}
+
+<div class="container">
+<h2>Page Navigation Details</h2>
+
+<p>This page shows how to add the page navigation bar that can be found just below the main 
+navigation bar (the one with the logo..etc..)</p>
+
+<p> The  
+
+<h2>This is the H2</h2>
+
+<h3>This is the h3 </h3>
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+</div>
+{%endblock PAGE_CONTENT %}
+
+
+
+
+

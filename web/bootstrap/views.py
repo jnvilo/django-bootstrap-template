@@ -4,4 +4,4 @@ from django import views
 
 
 class IndexView(views.View):
-    template_name = "index.html"
+    template_name = "bootstrap/index.html"
