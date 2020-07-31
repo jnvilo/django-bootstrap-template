@@ -1,7 +1,7 @@
 BOOTSTRAP_VER = 4.3.1
 
 .PHONY: web
-web: bootstrap venv web/requirements.txt
+web: bootstrap venv migrate
 
 .PHONY: setup
 setup: venv web/requirements.txt bootstrap
@@ -28,10 +28,18 @@ update_gitignore:
 .PHONY:
 venv:
 	virtualenv venv
-	
-web/requirements.txt: venv web/requirements.in
-	source venv/bin/activate && pip install -r web/requirements.in
+	source venv/bin/activate && pip install -r web/requirements.txt
 
 .PHONY:
 run:
 	venv/bin/python web/manage.py runserver 0.0.0.0:8000
+
+.PHONY:
+migrate:
+	venv/bin/python web/manage.py migrate
+.PHONY:
+makemigrations:
+	venv/bin/python web/manage.py migrations
+
+
+
