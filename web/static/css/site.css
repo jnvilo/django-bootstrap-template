@@ -1,12 +1,132 @@
-/* GLOBAL STYLES
--------------------------------------------------- */
-/* Padding below the footer and lighter body text */
 
+html {
+  
+  font-family: sans-serif;
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(22, 28, 45, 0)
+  
+  }
 body {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  color: #5a5a5a;
+    margin: 0;
+    //font-family: HKGroteskPro, serif;
+    font-size: 1.0625rem;
+    font-weight: 400;
+    //line-height: 1.6;
+    color: #161c2d;
+    text-align: left;
+    background-color: #fff
+    overflow-x: hidden; /* Prevent scroll on narrow devices */
+    padding-top: 56px;
+  }
+
+
+/**
+MAIN NAV styles: class main-nav
+**/
+
+.main-nav .dropdown-menu {
+
+  background: #343a3f;
 }
+
+
+
+.main-nav .button-secondary {
+  
+}
+
+.main-nav .show>.btn-secondary.dropdown-toggle {
+    color: #fff;
+    background-color: #343a3f;
+    border-color: #343a3f;
+}
+
+.main-nav .dropdown-menu a{
+   font-size: 0.8rem;
+    color: #FFF;
+}
+
+.main-nav .dropdown-menu a:hover{
+  background-color: #FFF;
+}
+
+.main-nav .dropdown-menu a:visited{
+    color: #fff;
+    background-color: #343a3f;
+    border-color: #343a3f;
+}
+/**
+PAGE_NAV block: class: page-nav
+*/
+
+.page-nav { 
+  display: flex;
+}
+
+.page-nav h1 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  margin-top:5px;
+}
+.nav-collapse { 
+  display: none !important;
+}
+
+.nav-wide {
+  dislpay: flex;
+}
+
+@media screen and (max-width:900px), screen and (max-height:500px) {
+    .nav-wide { display: none !important; }
+    .nav-collapse { display: flex;}
+    
+}
+
+/**
+PAGE_CONTENT Block: class: page-content
+*/
+
+.page-content {
+  padding-top:10px;
+}
+
+.page-content h1 {
+  font-size: 1.5rem;
+}
+
+.page-content h2 {
+  font-size: 1.3rem;
+}
+
+.page-content h3 {
+  font-size: 1.1rem;
+}
+
+
+/**
+FOOTER
+**/
+
+
+/*
+ * Footer
+ */
+.footer {
+  padding: 1rem 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: .05rem solid #e5e5e5;
+}
+.footer p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+
+
 
 
 /* CUSTOMIZE THE CAROUSEL
